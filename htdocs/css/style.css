@@ -1,0 +1,15 @@
+.feed {
+	position: relative;
+}
+
+.feed .dropdown {
+	display: none;
+	position: absolute;
+	right: 4px;
+	top: 4px;
+}
+
+.feed:hover .dropdown,
+.feed .dropdown.open {
+	display: block;
+}
