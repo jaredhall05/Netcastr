@@ -30,5 +30,7 @@ def feedCreate(request):
 	else:
 		return HttpResponse(feedParser.parseFeed(response, feedurl, request.user), mimetype='application/json')
 
-#@login_required
-#def feedDelete(request, feed_id):
+@login_required
+def feedDelete(request, feed_id):
+	Feed.objects.filter(pk=feed_id).delete()
+	return HttpResponse(serializers.serialize("json", Feed.objects.filter(user=request.user.id)), mimetype='application/json')

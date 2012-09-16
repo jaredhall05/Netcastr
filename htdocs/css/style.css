@@ -13,3 +13,25 @@
 .feed .dropdown.open {
 	display: block;
 }
+
+section {
+	border: 1px solid #E6E6E6;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	overflow: hidden;
+}
+
+section h2 {
+	background: #E6E6E6;
+	margin-top: 0;
+	text-indent: 5px;
+}
+
+section .btn-group {
+	background: #E6E6E6;
+	padding: 5px;
+}

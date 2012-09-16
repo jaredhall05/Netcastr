@@ -2,6 +2,7 @@ from xml.dom.minidom import parse
 from django.core import serializers
 from netcastr.models import Feed, Item
 import datetime
+import hashlib
 import re
 
 def parseFeed(xmlFile, url, user):
@@ -11,7 +12,7 @@ def parseFeed(xmlFile, url, user):
 	feedImageUrl = handleImage(xmldom.getElementsByTagName('image')[0])
 
 	f = Feed(
-		curXml = xmldom.toxml(),
+		curXml = hashlib.sha224(xmldom.toxml()).hexdigest(),
 		description = feedDescription,
 		imageUrl = feedImageUrl,
 		title = feedTitle,
